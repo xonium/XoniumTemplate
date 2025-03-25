@@ -22,13 +22,13 @@ jobs:
         with:
           dotnet-version: 9.X
 
-      - name: Install NuGet CLI
+      - name: Install NuGet CLI (Linux)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y nuget
+          curl -sSL https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -o nuget.exe
+          sudo apt-get install -y mono-complete
 
       - name: Create the package
-        run: nuget pack XoniumTemplate.nuspec -NoDefaultExcludes
+        run: mono nuget.exe pack XoniumTemplate.nuspec -NoDefaultExcludes
 
       - name: Publish the package
         run: dotnet nuget push *.nupkg --source 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
