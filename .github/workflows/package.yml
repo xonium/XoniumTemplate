@@ -20,7 +20,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 'latest'
+          dotnet-version: 9.X
 
       - name: Install NuGet CLI
         run: dotnet tool install --global nuget.commandline
