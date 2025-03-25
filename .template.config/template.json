@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Johan Öbrink",
+    "classifications": [ "Common", "Web" ],
+    "identity": "Xonium Template",
+    "name": "Quickly start a project",
+    "shortName": "xt",
+    "sourceName":"XoniumTemplate",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "preferNameDirectory": true
+  }
