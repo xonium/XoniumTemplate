@@ -23,7 +23,9 @@ jobs:
           dotnet-version: 9.X
 
       - name: Install NuGet CLI
-        run: dotnet tool install --global nuget.commandline
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nuget
 
       - name: Create the package
         run: nuget pack XoniumTemplate.nuspec -NoDefaultExcludes
